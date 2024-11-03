@@ -1,36 +1,41 @@
 .image-container {
     position: relative;
-    overflow: hidden; /* Đảm bảo không hiển thị phần hình ảnh vượt ra ngoài */
-    display: flex; /* Sử dụng flexbox để căn giữa */
-    flex-direction: column; /* Đặt hướng theo chiều dọc */
-    align-items: center; /* Căn giữa theo chiều ngang */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .track-info {
     text-align: center;
-    word-wrap: break-word; /* Cho phép xuống hàng nếu từ quá dài */
-    overflow: hidden; /* Ẩn phần vượt quá */
-    text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung bị cắt */
-    max-width: 60%; /* Đảm bảo không vượt quá chiều rộng của phần tử cha */
-    padding: 0 30px; /* Thêm khoảng cách bên trái và bên phải */
-    display: block; /* Hiển thị dưới dạng block để dễ dàng xuống hàng */
-    margin-top: 10px; /* Khoảng cách giữa hình ảnh và thông tin bài hát */
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+    padding: 0 30px;
+    display: block;
+    margin-top: 10px;
 }
 
 .track-item {
-    display: flex; /* Sử dụng flexbox cho toàn bộ item */
-    flex-direction: column; /* Đặt hướng theo chiều dọc */
-    align-items: center; /* Căn giữa mọi phần tử */
-    margin-bottom: 20px; /* Khoảng cách giữa các bài hát */
-    position: relative; /* Để sử dụng cho các phần tử con */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .play-pause-button {
-    margin-top: 10px; /* Khoảng cách giữa thông tin bài hát và nút phát */
     background-color: rgba(255, 255, 255, 0.7);
     border: none;
-    border-radius: 90%;
+    border-radius: 50%; /* Bo tròn */
     padding: 8px;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.play-pause-button:hover {
+    background-color: rgba(200, 200, 200, 0.7); /* Thay đổi màu khi hover */
 }
