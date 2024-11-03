@@ -34,7 +34,7 @@ const SpotifyLogin = () => {
           <>
             <h1>Welcome, you're logged in!</h1>
             <Button variant="contained" onClick={handleLogout}>LOGOUT</Button>
-            <h2>Your Playlist Tracks</h2>
+            <h1>Your Playlist Tracks</h1>
           </>
         ) : (
           <SpotifyLoginBtn />

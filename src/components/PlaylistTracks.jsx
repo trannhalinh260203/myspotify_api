@@ -48,7 +48,6 @@ const PlaylistTracks = ({ token }) => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Your Playlist Tracks</h1>
       <div className="track-list">
         {tracks.length > 0 ? (
           tracks.map((item) => (
