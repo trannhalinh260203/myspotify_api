@@ -1,6 +1,6 @@
 // src/actions/spotify.js
 export const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID; // Thêm CLIENT_ID trong file .env
-export const REDIRECT_URI = process.env.REACT_APP_SPOTIFY_RDIRECT_URI;
+export const REDIRECT_URI = 'http://localhost:3000/';
 export const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
 export const RESPONSE_TYPE = 'token'; // Hoặc 'code' tùy vào cách sử dụng
 

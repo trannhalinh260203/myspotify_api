@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import SpotifyLogin from './components/SpotifyLogin';
-import Header from './Header/header'; // Import Header
+import Header from './Header/header.js'; // Import Header
 import './App.css'; // Đảm bảo import file CSS
 
 function App() {
