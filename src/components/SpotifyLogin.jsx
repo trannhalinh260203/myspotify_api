@@ -1,44 +1,48 @@
 // src/components/SpotifyLogin.jsx
 import React, { useEffect, useState } from 'react';
 import SpotifyLoginBtn from './SpotifyLoginBtn';
-import { getTokenFromUrl } from '../actions/spotify'; // Ensure the import path is correct
-import { Button } from '@mui/material'; // Import MUI Button
+import { getTokenFromUrl } from '../actions/spotify';
+import PlaylistTracks from './PlaylistTracks';
+import { Button } from '@mui/material';
+import './SpotifyLogin.css';
 
 const SpotifyLogin = () => {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    const tokenFromUrl = getTokenFromUrl(); // Use the function to get the token from the URL
+    const tokenFromUrl = getTokenFromUrl();
     let storedToken = window.localStorage.getItem("token");
 
-    if (!storedToken && tokenFromUrl) {
-      window.localStorage.setItem("token", tokenFromUrl); // Store token in local storage
-      setToken(tokenFromUrl); // Set token in state
-      window.location.hash = ""; // Clear the URL hash after getting the token
+    if (!storedToken && tokenFromUrl.access_token) {
+      window.localStorage.setItem("token", tokenFromUrl.access_token);
+      setToken(tokenFromUrl.access_token);
+      window.location.hash = "";
     } else {
-      setToken(storedToken); // If a token is already stored, set it in state
+      setToken(storedToken);
     }
   }, []);
 
   const handleLogout = () => {
-    setToken(null); // Clear token in state
-    window.localStorage.removeItem("token"); // Remove token from local storage
+    setToken(null);
+    window.localStorage.removeItem("token");
   };
 
   return (
-    <div>
-      {token ? (
-        <div>
-          <h1>Welcome, you're logged in!</h1> {/* Welcome message */}
-          <Button variant="contained"  onClick={handleLogout}>
-            LOGOUT
-          </Button> {/* MUI styled logout button */}
-        </div>
-      ) : (
-        <SpotifyLoginBtn />
-      )}
+    <div className="spotify-login-container">
+      <div className="header-container">
+        {token ? (
+          <>
+            <h1>Welcome, you're logged in!</h1>
+            <Button variant="contained" onClick={handleLogout}>LOGOUT</Button>
+            <h2>Your Playlist Tracks</h2>
+          </>
+        ) : (
+          <SpotifyLoginBtn />
+        )}
+      </div>
+      {token && <PlaylistTracks token={token} />}
     </div>
   );
-}
+};
 
 export default SpotifyLogin;

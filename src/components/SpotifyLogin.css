@@ -1,0 +1,14 @@
+/* src/components/SpotifyLogin.css */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa các thành phần theo chiều ngang */
+    margin-top: 20px; /* Thêm khoảng cách phía trên nếu cần */
+    text-align: center;
+}
+
+.spotify-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

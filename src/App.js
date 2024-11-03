@@ -1,11 +1,13 @@
-//App.js
-import './App.css';
+// src/App.js
+import React from 'react';
 import SpotifyLogin from './components/SpotifyLogin';
+import './App.css'; // Đảm bảo import file CSS
 
 function App() {
-    return (
-    <div className="App">
-      <SpotifyLogin/>
+  return (
+    <div>
+      <div className="background-image" id="backgroundImage" />
+      <SpotifyLogin />
     </div>
   );
 }

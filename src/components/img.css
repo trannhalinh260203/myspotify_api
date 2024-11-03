@@ -1,0 +1,14 @@
+/* src/components/img.css */
+.album-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 4px solid white;
+    padding: 2px;
+}
+
+.image-container {
+    position: relative; /* Đặt vị trí tương đối cho chứa hình ảnh */
+    width: 100%;
+    max-width: 250px;
+}

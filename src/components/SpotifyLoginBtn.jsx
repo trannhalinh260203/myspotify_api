@@ -1,12 +1,14 @@
 // src/components/SpotifyLoginBtn.jsx
-import { Button } from '@mui/material';
 import React from 'react';
-import { loginUrl } from '../actions/spotify'; // Ensure the import path is correct
+import { Button } from '@mui/material';
+import { loginUrl } from '../actions/spotify';
 
-export default function SpotifyLoginbtn() {
+const SpotifyLoginBtn = () => {
   return (
     <Button href={loginUrl} variant="contained">
       LOGIN
     </Button>
   );
-}
+};
+
+export default SpotifyLoginBtn;
